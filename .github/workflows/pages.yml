@@ -1,4 +1,4 @@
-name: Test and deploy to GitHub Pages
+name: Cross-browser regression tests
 on:
   push:
     branches: [main]
@@ -8,7 +8,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: pages-${{ github.ref }}
+  group: tests-${{ github.ref }}
   cancel-in-progress: true
 jobs:
   test:
@@ -23,28 +23,3 @@ jobs:
       - run: npm install --no-save --ignore-scripts --no-package-lock playwright@1.56.1
       - run: npx playwright install --with-deps chromium firefox webkit
       - run: node browser-test.mjs
-      - name: Package tested static site
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        run: |
-          mkdir -p _site
-          cp index.html app.js _site/
-          touch _site/.nojekyll
-      - uses: actions/upload-pages-artifact@v3
-        if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-        with:
-          path: _site
-  deploy:
-    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
-    needs: test
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - uses: actions/configure-pages@v5
-      - name: Deploy tested site
-        id: deployment
-        uses: actions/deploy-pages@v4
