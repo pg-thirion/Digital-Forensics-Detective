@@ -1,5 +1,7 @@
 # Digital Forensics Detective
 
+**[Play Digital Forensics Detective on Vercel](https://digital-forensics-detective.vercel.app/)**
+
 A browser-based fictional digital forensics investigation game. All evidence, identities, domains and incidents are synthetic. No live systems are accessed.
 
 ## Play locally
