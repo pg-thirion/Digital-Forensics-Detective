@@ -1,7 +1,7 @@
 {
   "framework": null,
   "installCommand": "echo No runtime dependencies",
-  "buildCommand": "node --test test.mjs && mkdir -p dist && cp index.html app.js dist/",
+  "buildCommand": "node --test test.mjs && mkdir -p dist && cp index.html app.js toolkit.js dist/",
   "outputDirectory": "dist",
   "headers": [
     {
