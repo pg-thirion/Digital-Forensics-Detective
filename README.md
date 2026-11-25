@@ -24,9 +24,9 @@ Correct conclusions contribute up to 70 points. Relevant supporting evidence con
 
 Run `node --test test.mjs` using Node.js 20 or newer. No packages are required. Tests cover case data, scoring, simulated DOM rendering, evidence gating, malformed saved data and duplicate evidence. For real-browser testing, install Playwright with `npm install --no-save --ignore-scripts --no-package-lock playwright@1.56.1`, run `npx playwright install --with-deps chromium firefox webkit`, then `node browser-test.mjs`. The browser suite exercises every case in Chromium desktop and mobile, Firefox and WebKit.
 
-## Deploy on GitHub Pages
+## Deploy on Vercel
 
-In repository Settings > Pages, under Build and deployment, set Source to **GitHub Actions**. The committed workflow tests each release before uploading only the runtime files and deploying them. If Pages was just enabled, run the workflow manually from Actions > Test and deploy to GitHub Pages > Run workflow. Expected URL: https://pg-thirion.github.io/Digital-Forensics-Detective/ (availability depends on successful deployment). The application requires no server-side functionality.
+Import this repository with the Other framework preset. `vercel.json` runs the unit tests before packaging the static runtime files into `dist/` and sets security response headers. The GitHub Actions workflow independently runs the real-browser regression suite.
 
 ## Privacy and limitations
 
