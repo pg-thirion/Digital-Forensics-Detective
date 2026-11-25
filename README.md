@@ -8,8 +8,8 @@ Open `index.html` in a modern browser, or serve the root with `python -m http.se
 
 ## Features
 
-- Six cases across beginner, intermediate and advanced difficulty.
-- 48 read-only evidence artefacts and 18 investigative questions.
+- Ten cases across beginner, intermediate and advanced difficulty.
+- 80 read-only evidence artefacts and 30 investigative questions.
 - Browser history, authentication logs, deleted-file records, metadata, email, network and print evidence.
 - Search, category filters, chronological timeline and evidence inspection.
 - Evidence-backed findings, optional hints, case scores and explanations.
@@ -31,3 +31,7 @@ Import this repository with the Other framework preset. `vercel.json` runs the u
 ## Privacy and limitations
 
 Progress and notes remain in local browser storage and can be exported to JSON. All case answers are present in the client-side source, so this is a self-study simulation rather than a tamper-resistant assessment platform. No real credentials, files or personal data are needed. Evidence fingerprints and logs are fictional examples, not genuine forensic acquisitions.
+
+## Expanded investigation toolkit
+
+Case search, difficulty and status filters, sorting, evidence status filtering, bulk inspection, bookmarks, classification, annotations, comparison, timeline reconstruction, illustrative local custody log, investigation checklist, hypothesis notebook, confidence ratings, readiness indicators, elapsed time, attempt history, achievements, aggregate progress, glossary, CSV and text reports, full progress backup/import, light/dark themes. Local data are not tamper-proof. Existing saves are automatically migrated.
